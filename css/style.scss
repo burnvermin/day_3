@@ -1,0 +1,663 @@
+$borders: 100px;
+$padding: 20px;
+$marginleftResponsive: 89px;
+
+$colors: (
+    lr: hsl(356, 100%, 66%),
+    vlr: hsl(355, 100%, 74%),
+    vdb: hsl(208, 49%, 24%),
+    dgb: hsl(240, 10%, 16%)
+
+);
+
+$desktop: 445px;
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+@function color($color) {
+    @return map-get($colors, $color)
+}
+
+body, html {
+    height: 100%;
+}
+
+body {
+    margin: 0%;
+    @include desktop {
+        width: 100%;
+        overflow-x: hidden;
+    }
+   
+}
+img {
+    width: 100%;
+}
+.head {
+    border-bottom-left-radius: $borders;
+    background-image: linear-gradient(to bottom right, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    height: auto;
+    padding-top: 0px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    
+        
+    
+    #bgimg {
+        width: 100em;
+        margin-top: -120%;
+        margin-left: -130%;
+        overflow: hidden;
+        position: absolute;
+
+        @include desktop {
+            width: 150em;
+            margin-top: -60%;
+            margin-left: -20%;
+        }
+    }
+    .content {
+        @include desktop {
+          width: 90%;
+          margin: auto;  
+          padding-top: 2em; 
+        }
+    }
+    h1 {        
+        position: relative;
+        padding: $padding;
+        margin-top: 0;
+
+        @include desktop {
+            margin-left: 0%;
+            width: 10%;
+            margin-right: 0;
+            float: left;
+            font-size: 50px;
+        }
+    }
+    
+    .nav-toggle {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+        cursor: pointer;
+        height: 2rem;
+        left: 2rem;
+        position: relative;
+        top: 2rem;
+        width: 2.5rem;
+        z-index: 2;
+        float: right;
+
+        @include desktop {
+         display: none;   
+        }
+      }
+      .nav-toggle-bar,  .nav-toggle {
+          
+        margin-right: 15%;
+        margin-top: -27%;
+
+        @include desktop {
+         display: none;   
+        }
+      }
+      .nav-toggle .nav-toggle-bar,  .nav-toggle .nav-toggle-bar::after,  .nav-toggle .nav-toggle-bar::before {
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        background: white;
+        content: '';
+        height: 0.3rem;
+        width: 100%;
+
+        @include desktop {
+            display: none;
+        }
+
+      }
+      .nav-toggle .nav-toggle-bar { margin-top: 0; }
+
+        .nav-toggle .nav-toggle-bar::after { margin-top: 0.8rem; }
+
+        .nav-toggle .nav-toggle-bar::before { margin-top: -0.8rem; }
+
+        .nav-toggle.expanded .nav-toggle-bar { background: transparent; }
+
+        .nav-toggle.expanded .nav-toggle-bar::after, .nav-toggle.expanded .nav-toggle-bar::before {
+        background: white;
+        margin-top: 0;
+    }
+    .nav-toggle.expanded .nav-toggle-bar::after {
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+      
+      .nav-toggle.expanded .nav-toggle-bar::before {
+        -ms-transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+      }
+      .nav {
+        background-color: #fff;
+        color: black;
+        cursor: pointer;
+        padding: $padding 0;
+        position: fixed;
+        text-align: center;
+        width: 90%;
+        margin: auto 5%;
+        z-index: 3;
+        font-size: 1.5em;
+        border-radius: 10px;
+        display: none;
+        box-shadow: 0 0 30px 0 rgba($color: #000000, $alpha: .2);
+
+        @include desktop {
+         display: block;   
+         background: none;
+         box-shadow: none;
+         color: white;
+         position: relative;
+        }
+
+    }
+    .show {
+        display: block;
+    }
+    .nav ul {
+        position: relative;
+        list-style: none;
+        margin: 0%;
+        padding: 0;
+        
+        @include desktop {
+         display: flex;
+         float: left; 
+         margin-left:10%;  
+        }
+        
+        li {
+            padding: $padding;
+            display: block;
+
+            .nav2-elements {
+                display: none;
+                position: relative;
+                padding: $padding;
+                background-color: rgb(223, 223, 223);
+                color: black;
+                border-radius: 10px;
+            }
+            .show2 {
+                display: block;
+            }
+            .nav3-elements {
+                display: none;
+                position: relative;
+                padding: $padding;
+                background-color: rgb(223, 223, 223);
+                color: black;
+                border-radius: 10px;
+            }
+            .show3 {
+                display: block;
+            }
+            .nav4-elements {
+                display: none;
+                position: relative;
+                padding: $padding;
+                background-color: rgb(223, 223, 223);
+                color: black;
+                border-radius: 10px;
+            }
+            .show4 {
+                display: block;
+            }
+        }
+
+        img{
+            width: 10px;
+            height: 8px;
+        }
+    }
+
+    hr {
+        width: 80%;
+        margin: 10% auto;
+
+        @include desktop {
+         display: none;   
+        }
+    }
+    p{
+        margin-top: 2em;
+        cursor: pointer;
+        font-weight: bolder;
+        
+        @include desktop {
+         float: right;   
+         margin-top: 2%;
+         font-weight: normal;
+         font-size: 18px;
+        }
+    }
+    p #one {
+        padding: $padding;
+        text-align: center;
+        text-decoration:none;
+        margin: 0 auto 0 auto;
+        background-color:none;
+        color: hsl(208, 49%, 24%);
+
+        @include desktop {
+            color: #fff;
+        }
+    }
+    p #two {
+        padding: .7em 2em;
+        text-align: center;
+        text-decoration:none;
+        margin-bottom:2em;
+        background-image: linear-gradient(to bottom right, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+        color: #fff;
+        border-radius: 90px;
+        
+        @include desktop {
+            background-color: #fff;
+            background-image: none;
+            color: hsl(353, 100%, 62%);
+            padding: .5em 1em;
+        }
+    }
+    .text {
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        width: 90%;
+        margin: 6em auto 4em auto;
+
+        @include desktop {
+            clear: both;
+            display: grid;
+            text-align: center;
+            margin: 10em auto 2em auto;
+            width: 70%;
+        }
+
+        h1{
+            margin-bottom: 0;
+            font-size: 34px;
+
+            @include desktop {
+                width: 100%;
+                 text-align: center;
+                 font-size: 60px;
+            }
+
+            br {
+                @include desktop {
+            display: none;
+                }
+            }
+        }
+
+       p {
+           font-weight: normal;
+           text-align: center;
+           margin: 0em auto 0em auto;
+           line-height: 25px;
+           font-size: 24px;
+
+           @include desktop {
+            float: none;   
+        }
+       }
+
+       .buttons {
+           padding-top: 3em;
+           padding-bottom: 7em;
+           cursor: pointer;
+          
+           #btn{
+            padding: 1em 2em;
+            border-radius: 90px;
+            border: none;
+            font-weight: bolder;
+            color: hsl(356, 100%, 66%);
+            margin-right: 2%;
+            margin-left: -1%;
+
+           }
+           #btn1{
+            padding: 1em 2em;
+            border-radius: 90px;
+            border-color: white;
+            border-style: solid;
+            color: white;
+            background: transparent;
+           font-weight: bolder;
+           }
+       }
+    }
+    
+      
+}
+
+.container {
+    text-align: center;
+    
+    @include desktop {
+        position: relative;
+        margin-top: 15em;
+    }
+
+    .mobimg {
+        background-image: url("../images/illustration-editor-mobile.svg");
+        height: 15em;
+        width: 100%; 
+        margin-left: -5%;
+        padding-bottom: 7em;
+        background-repeat: no-repeat;
+
+        @include desktop {
+            background-image: url("../images/illustration-editor-desktop.svg");
+            height: 50em;
+            width: 48%; 
+            margin-left: 55%;
+            margin-top: -10%;
+        }
+    }
+    .texts {
+        @include desktop {
+            display: grid;
+            width: 50%;
+            margin-top: -60%;
+            text-align: left;
+        }
+    }
+
+    h1 {
+        @include desktop {
+            padding-bottom: 2em;
+        }
+    }
+    h2{
+        font-size: 1.5em;
+        width: 65%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10%;
+        
+        @include desktop {
+            font-size: 30px;   
+            margin: 1em 2em;
+        }
+
+    }
+    p{
+        width: 70%;
+        margin: auto;
+        line-height: 30px;
+
+        @include desktop {
+            margin: 1em 4em;
+            line-height: 35px;
+        }
+    }
+    .text {
+        @include desktop {
+            text-align: left;
+            margin-top: 15%;
+            margin-bottom: 10%;
+        }
+    }
+}
+
+.container1 {        
+        background-image: linear-gradient(to bottom right, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
+        margin-top: 17em;
+        border-top-right-radius: $borders;
+        border-bottom-left-radius: $borders;
+        color: #fff;
+
+        @include desktop{
+            background-image: linear-gradient(to bottom right, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
+            border-top-right-radius: $borders;
+            border-bottom-left-radius: $borders;
+            color: #000;
+            margin: 35% 0% 0% 0%;
+
+        }
+
+    .bggrident {
+        overflow: hidden;
+        border-top-right-radius: $borders;
+
+        @include desktop {
+            height: 15em;
+        }
+
+        img{
+            position: relative;
+            margin-top: -70%;
+            margin-left: -28%;
+            width:35em;
+            height:35em;
+            z-index: 1;
+
+            @include desktop {
+                margin-left: -10%;
+                position: relative;
+                z-index: 1;
+                margin-top: -30%;
+                width: 50em;
+                height: 50em;
+            }
+        }
+    }
+    #grid {
+        position: relative;
+        z-index: 3;
+        
+        @include desktop{
+            display: flex;
+        }
+
+        img {
+            margin: -85% 0 0 0;
+            width: 20em;
+            height: 20em;
+            position: absolute;
+            z-index: 3;
+
+            @include desktop {
+                position: relative;
+                color: black;
+                flex: 50%;
+                margin-top: -33%;
+                height: 30em;
+            }
+        }
+        .text {
+            @include desktop{
+                margin-top: 50%;
+                flex: 50%;
+                margin-left: 5%;
+            }
+        }
+        h1 {
+            color: #fff;
+            margin: -40% auto auto auto;
+            width: 70%;
+            text-align: center;
+            
+            @include desktop{
+                margin-top: -20%;
+                text-align: left;
+                margin-left:30%;
+            }
+        }
+        p{
+            width: 75%;
+            margin: auto;
+            text-align: center;
+            padding-top: $padding;
+            padding-bottom: 6em;
+            line-height: 24px;            
+            color: white;
+
+            @include desktop {
+                width: 50%;
+                text-align: left;
+                margin-left: 30%;
+                line-height: 30px;
+            }
+        }
+    }
+
+}
+
+.container2 {
+
+    @include desktop {
+        display: flex;
+        margin-top: 10%;
+    }
+    .img{        
+        background-image: url("../images/illustration-laptop-mobile.svg");
+        height: 15em;
+        width: 100%; 
+        margin-left: -15%;
+        padding-bottom: 7em;
+        background-repeat: no-repeat;
+        
+        @include desktop {
+            width: 100%;
+            flex: 50%;
+            height: 52em;            
+            margin-top: -5%;
+            padding: 0;
+            background-image: url("../images/illustration-laptop-desktop.svg");
+        }
+    }
+
+    .texts {
+        @include desktop {
+            flex: 40%;
+            margin-top: 5%;
+            text-align: left;
+        }
+    }
+    #text{
+
+        h3{
+            color: hsl(208, 49%, 24%);
+            margin: auto auto auto auto;            
+            font-size: 1.5em;
+            width: 65%;
+            margin-top: 10%;
+            text-align: center;
+            
+        @include desktop {
+            text-align: left;
+        }
+
+        }
+        p{
+            width: 70%;
+            text-align: center;
+            margin: auto auto auto auto;
+            padding-top: $padding;
+            line-height: 24px;
+            
+        @include desktop {
+            text-align: left;
+            margin-left: 17%;
+        }
+        }
+    }
+    #text2{
+
+        h3{
+            color: hsl(208, 49%, 24%);
+            margin: auto auto auto auto;            
+            font-size: 1.5em;
+            width: 65%;
+            margin-top: 10%;
+            text-align: center;
+            @include desktop {
+                text-align: left;
+            }
+
+        }
+        p{
+            width: 70%;
+            text-align: center;
+            margin: auto auto auto auto;
+            padding-top: $padding;
+            line-height: 24px;
+            @include desktop {
+                text-align: left;
+                margin-left: 17%;
+            }
+        }
+    }
+}
+
+.footer {
+    background-color: color(dgb);
+    text-align: center;
+    color: #fff;
+    padding: 2em;
+    margin-top: 20%;
+    border-top-right-radius: $borders;
+    @include desktop {
+        padding-top: 3em;
+        display: flex;
+    }
+
+    h1{
+        padding-bottom: 2em;
+        @include desktop {
+            flex: 25%;
+        }
+    }
+
+    ul {
+        list-style: none;
+        text-align: center;
+        width: auto;
+        padding-bottom: 2em;
+        margin-left: -10%;
+        @include desktop {
+            flex: 25%;
+        }
+
+        li {         
+            padding-bottom: 1em;
+            color: rgb(206, 206, 206);
+            strong{
+                padding-bottom: 3em;
+                color: #fff;
+                margin-bottom: 10%;
+            }
+        }
+    }
+}
